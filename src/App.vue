@@ -11,16 +11,34 @@
     </header>
     <div class="container">
     <Add/>
-    <List/>
+    <List :comments="comments"/>
     </div>
-  </div>
+  </div>  
 </template>
 
 <script>
-import Add from "./components/Add";
-import List from "./components/List";
+import Add from  './components/Add.vue';
+import List from './components/List.vue';
 export default {
-  components:{
+  data(){
+    return{
+      comments:[
+        {
+          name:'Bob',
+          content:'vue 初步看懂'
+        },
+        {
+          name:'CAT',
+          content:'Vue so Easy'
+        },
+        {
+          name:'BZ',
+          content:'JUST so so'
+        }
+      ]
+    }
+  },
+  components:{ 
     Add,
     List
   }

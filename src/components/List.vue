@@ -4,7 +4,7 @@
         <h3 class="reply">评论回复：</h3>
         <h2 style="display: none">暂无评论，点击左侧添加评论！！！</h2>
         <ul class="list-group">
-          <li class="list-group-item">
+          <!-- <li class="list-group-item">
             <div class="handle">
               <a href="javascript:;">删除</a>
             </div>
@@ -23,14 +23,23 @@
               <span>说:</span>
             </p>
             <p class="centence">React有点难!</p>
-          </li>
+          </li> -->
+        <Item v-for="(comment,index) in comments" :key="index" :comment="comment"/>
+        
         </ul>
       </div>
   </div>
 </template>
 <script>
 export default {
-  
+  // 声明接收属性，这个属性就回成为组件对象的属性
+  props:['comments'],
+  data(){ 
+    return{
+      //a为 1 
+      a:1
+    }
+  }
 }
 </script>>
 <style>
@@ -38,7 +47,7 @@ export default {
   margin-top: 0px;
 }
 
-li {
+/* li {
   transition: .5s;
   overflow: hidden;
 }
@@ -64,5 +73,5 @@ li {
 
 .user {
   font-size: 22px;
-}
+} */
 </style>
