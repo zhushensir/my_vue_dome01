@@ -1,28 +1,28 @@
 <template>
-   <li class="list-group-item">
-            <div class="handle">
-              <a href="javascript:;">删除</a>
-            </div>
-            <p class="user">
-              <span>{{comment.name}}</span>
-              <span>{{comment.comtent}}</span>
-            </p>
-            <p class="centence">React不错!</p>
-          </li>
+  <li class="list-group-item">
+    <div class="handle">
+      <a href="javascript:;">删除</a>
+    </div>
+    <p class="user">
+      <span>{{comment.name}}</span>
+      <span>说：</span>
+    </p>
+    <p class="centence">{{comment.comtent}}</p>
+  </li>
 </template>
 
 <script>
 export default {
-  props:{
+  props: {
     //指定属性名和属性值的类型
     comment: Object
   }
 }
-</script>>
+</script>
 
 <style>
 .li {
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
 }
 

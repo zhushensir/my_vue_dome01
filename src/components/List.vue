@@ -4,41 +4,24 @@
         <h3 class="reply">评论回复：</h3>
         <h2 style="display: none">暂无评论，点击左侧添加评论！！！</h2>
         <ul class="list-group">
-          <!-- <li class="list-group-item">
-            <div class="handle">
-              <a href="javascript:;">删除</a>
-            </div>
-            <p class="user">
-              <span>xxx</span>
-              <span>说:</span>
-            </p>
-            <p class="centence">React不错!</p>
-          </li>
-          <li class="list-group-item">
-            <div class="handle">
-              <a href="javascript:;">删除</a>
-            </div>
-            <p class="user">
-              <span>yyy</span>
-              <span>说:</span>
-            </p>
-            <p class="centence">React有点难!</p>
-          </li> -->
         <Item v-for="(comment,index) in comments" :key="index" :comment="comment"/>
-        
         </ul>
       </div>
   </div>
 </template>
 <script>
-export default {
+ import Item from './ltem.vue'
+ export default {
   // 声明接收属性，这个属性就回成为组件对象的属性
   props:['comments'],
+  comonents:{
+    Item
+  },
   data(){ 
     return{
       //a为 1 
-      a:1
-    }
+      a: 1
+    } 
   }
 }
 </script>>

@@ -22,6 +22,12 @@
 
 <script>
 export default {
+  props:{
+    addComment:{ //指定了属性名/属性值的类型/必要性
+      type: Function,
+      required:true
+    }
+  },
   methods: {
     data() {
         return{
@@ -34,16 +40,20 @@ export default {
     //先检查输入的合法性
     const name = this.name.trim()
     const content = this.content.trim()
-    if(!name||!content){
-      alert('姓名或者内容不能为空')
-      return
-    }
+     if(!name||!content){
+       alert('姓名或者内容不能为空')
+       return
+     }
     //输入数据，封装成一个comment对象
     const comment = {
       name,
       content
     }
     //添加到comments中/
+    this.addComment(comment)
+    //清除输入
+    this.name='',
+    this.comment=''
     }
   }
 };
