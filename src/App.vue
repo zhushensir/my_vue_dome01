@@ -10,7 +10,7 @@
       </div>
     </header>
     <div class="container">
-    <!-- <Add :addComment="addComment"/> -->
+    <Add :addComment="addComment"/>
     <List :comments="comments"/>
     </div>
   </div>  

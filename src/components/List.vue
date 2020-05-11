@@ -14,7 +14,7 @@
  export default {
   // 声明接收属性，这个属性就回成为组件对象的属性
   props:['comments'],
-  components:{
+  comonents:{
     Item
   },
   data(){ 
