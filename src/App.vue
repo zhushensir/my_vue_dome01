@@ -10,8 +10,8 @@
       </div>
     </header>
     <div class="container">
-    <!-- <Add :addComment="addComment"/> -->
-    <List :comments="comments"/>
+     <Add :addComment="addComment"/> 
+    <List :comments="comments" :deleteComment="deleteComment"/>
     </div>
   </div>  
 </template> 
@@ -20,7 +20,7 @@
 import Add from  './components/Add.vue'
 import List from './components/List.vue'
 export default {
-  data(){ 
+  data(){  
     return{
          comments:[ //数据在哪个组件，操作数据的行为（方法）就应该定义在哪个组件
         {
@@ -40,9 +40,13 @@ export default {
   }, 
   methods:{
     //添加评论
-    addComment(comments){
+    addComment(comment){
       this.comments.unshift(comment)
-    } 
+    },
+    //删除指定下标的评论
+    deleteComment(index){
+      this.comments.splice(index,1)
+    }
   },
   components:{ 
     Add,
